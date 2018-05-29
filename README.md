@@ -51,7 +51,7 @@ names(subject_train)<-"subject"
 
 
 
-###### merge training data together
+###### merge training data together and add descriptive labels
 training_data<-cbind(subject_train, activities_train, features_train)
 
 
@@ -80,7 +80,7 @@ names(subject_test)<-"subject"
 
 
 
-##### merge test data together
+##### merge test data together and add descriptive labels
 test_data<-cbind(subject_test, activities_test, features_test)
 
 
@@ -110,20 +110,15 @@ select_columns<-M[,c(2:1,564,grep("mean", colnames(M)),grep("std",colnames(M)))]
 
 ### Question 3: Use descriptive activity names to name the activities in the dataset
 
-#### I assume this means to change the columns names from V1, V2, etc. to the 
-#### appropriate labels provided in the datsets.
-#### This was done when test and training sets were being created.  See Lines ........... Above
+#### I assume this means to change the columns names from V1, V2, etc. to the appropriate labels provided in the datsets. This was done when test and training sets were being created.  See Code Section Above:  merge test (train) data together...
 
 
 
 ### Question 4: Appropriately label the dataset with descriptive variable names.
-#### I assume this means to change the columns names from V1, V2, etc. to the 
-#### appropriate labels provided in the datsets.
-#### This was done when test and training sets were being created.  See Lines .............Above
+#### I assume this means to change the columns names from V1, V2, etc. to the appropriate labels provided in the datsets. This was done when test and training sets were being created.  See Code Section Above:  merge test (train) data together...
 
 
-### Question 5: From the data set in step 4, create a second, independent tidy data set with 
-#### the average of each variable for each activity and each subject.
+### Question 5: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
 ly.mean<-sapply(split(select_columns, list(select_columns$subject,select_columns$activity_label)),
@@ -134,7 +129,7 @@ averages<-t(ly.mean)
 averages<-data.frame(names = rownames(averages), averages, row.names = NULL)
 
 
-library(matrixStats)
+
 colSd <- function (x, na.rm=FALSE) apply(X=x, MARGIN=2, FUN=sd, na.rm=na.rm)
 
 ly.std<-sapply(split(select_columns, list( select_columns$subject,select_columns$activity_label)),
