@@ -9,8 +9,11 @@
 setwd(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset")
 
 getwd()
+
 library(data.table)
+
 library(dplyr)
+
 library(tidyr)
 
 
