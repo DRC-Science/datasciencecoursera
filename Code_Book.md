@@ -1,12 +1,12 @@
 
-#Getting and Cleaning Data Course Project
+# Getting and Cleaning Data Course Project
 
-##Code Book 
-
-
+## Code Book 
 
 
-###The Tidy Data - TidyData.csv
+
+
+### The Tidy Data - TidyData.csv
 
 Each row represents data from a subject (person) and activity (e.g. WALKING, STANDING, etc.). 
 Each variable is the Mean or Standard Deviation of the Mean or Standard Deviation of the measurements taken by the researchers.
@@ -22,7 +22,7 @@ If the measurement variable begins with an "f", it refers to a frequency measure
 
 
 
-Mean and Standard Deviation of measurements below were provided:
+#### Mean and Standard Deviation of measurements below were provided:
 
 - The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Same applies for the Y and Z axis. 
 - The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
@@ -32,22 +32,22 @@ Mean and Standard Deviation of measurements below were provided:
 For additional detail on the measurements taken, see the Original Data Section of the Code Book.
 
 
-To tidy the data, the following steps needed to be taken:
+#### To tidy the data, the following steps needed to be taken:
 
 
--Merged subject (subject_train.txt, subject_test.txt) and activity numbers (y_train.txt, y_test.txt) to the training (X_train.txt) and test (X_test.txt) datasets 
--Added labels to the activity numbers data sets by activity number by merging the activity labels (activity_lables.txt) to the updated training and test dataset.
--Added descriptive measurement names (features.txt) to the updated training and test datasets
--Merged the training (X_train.txt) and the test (X_test.txt) sets to create one data set. 
--Extracted only the measurements on the mean and standard deviation for each measurement variable. 
--Created an independent tidy data set with the average and standard deviation of each variable in the extracted dataset for each activity and each subject.
+- Merged subject (subject_train.txt, subject_test.txt) and activity numbers (y_train.txt, y_test.txt) to the training (X_train.txt) and test (X_test.txt) datasets 
+- Added labels to the activity numbers data sets by activity number by merging the activity labels (activity_lables.txt) to the updated training and test dataset.
+- Added descriptive measurement names (features.txt) to the updated training and test datasets
+- Merged the training (X_train.txt) and the test (X_test.txt) sets to create one data set. 
+- Extracted only the measurements on the mean and standard deviation for each measurement variable. 
+- Created an independent tidy data set with the average and standard deviation of each variable in the extracted dataset for each activity and each subject.
 
 More detail is available in the comments of the code which is available in the README.md document.
 
 
 
 
-###The Original Data:
+### The Original Data:
 
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
