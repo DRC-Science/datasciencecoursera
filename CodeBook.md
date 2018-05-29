@@ -9,16 +9,14 @@
 ### The Tidy Data - TidyData.csv
 
 Each row represents data from a subject (person) and activity (e.g. WALKING, STANDING, etc.). 
-Each variable is the Mean or Standard Deviation of the Mean or Standard Deviation of the measurements taken by the researchers.
+Each variable is the Mean or Standard Deviation of the Mean or Standard Deviation of the Mean of Standard Deviation of measurements produced by the researchers.
 
-Mean.Variable - The Mean of the variables are labeled *"Mean.<insert measurement variable>"*
-Std.Variable - The Standard Deviation of the measurement variables are labled *"Std.<insert measurement variable>"*
+Mean.Variable - The Mean of the variables produced by the researchers are labeled *"Mean.<insert measurement variable>"*
+Std.Variable - The Standard Deviation of the variables produced by the researchers are labled *"Std.<insert measurement variable>"*
 
  
 
-Measurement Variables - Measurements were taken on the X, Y, and Z axes.  The specific axis is noted on the end of the variable name.
-Time and Frequency measurements were taken.  If the measurement variable begins with "t", it refers to a time measurement.  
-If the measurement variable begins with an "f", it refers to a frequency measurement.
+Measurement Variables - Measurements were taken on the X, Y, and Z axes.  The specific axis is noted on the end of the variable name. Time and Frequency measurements were taken.  If the measurement variable begins with "t", it refers to a time measurement.  If the measurement variable begins with an "f", it refers to a frequency measurement.
 
 
 

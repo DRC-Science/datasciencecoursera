@@ -20,38 +20,51 @@ library(tidyr)
 
 ##### labels and descriptions
 features<-read.table("features.txt")
+
 features<-data.table(features)
+
 l<-as.character(features$V2)
 
 
 
 activity_labels<-read.table("activity_labels.txt")
+
 activity_labels<-data.table(activity_labels)
+
 names(activity_labels)<-c("activity_num","activity_label" )
 
 
 ##### Training Related Data
  
 ###### data
+
 features_train<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\train\\X_train.txt")
+
 features_train<-data.table(features_train)
 
 
 ###### activity labels
+
 activities_train<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\train\\y_train.txt")
+
 activities_train<-data.table(activities_train)
+
 names(activities_train)<-"activities"
 
 
 ###### subject number
+
 subject_train<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\train\\subject_train.txt")
+
 subject_train<-data.table(subject_train)
+
 names(subject_train)<-"subject"
 
 
 
 
 ###### merge training data together and add descriptive labels
+
 training_data<-cbind(subject_train, activities_train, features_train)
 
 
@@ -63,24 +76,31 @@ names(label_training_data)<-c("activities", "subject", l, "activity_label")
 ##### Test Related Data
 
 features_test<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\test\\X_test.txt")
+
 features_test<-data.table(features_test)
 
 
 ###### activity labels
+
 activities_test<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\test\\y_test.txt")
+
 activities_test<-data.table(activities_test)
 
 names(activities_test)<-"activities"
 
 
 ###### subject number
+
 subject_test<-read.table(".\\Desktop\\DataScienceclass\\GettingAndCleaningData\\UCI HAR Dataset\\test\\subject_test.txt")
+
 subject_test<-data.table(subject_test)
+
 names(subject_test)<-"subject"
 
 
 
 ##### merge test data together and add descriptive labels
+
 test_data<-cbind(subject_test, activities_test, features_test)
 
 
@@ -104,6 +124,7 @@ rm(label_training_data, label_test_data)
 ### Question 2: Extract only the measurements on the mean and standard deviation for each measurement
 
 M<-as.data.frame(Merged_train_test)
+
 select_columns<-M[,c(2:1,564,grep("mean", colnames(M)),grep("std",colnames(M)))]
 
 
@@ -159,6 +180,7 @@ names<-as.data.frame(names) %>% separate(names, into = c("subject", "activity"),
 merged_mean_std<-cbind(names,merged_mean_std)
 
 merged_mean_std<-merged_mean_std[,c(1:2,4:161)]
+
 subject<-as.numeric(merged_mean_std$subject)
 
 TidyData<-cbind(subject,merged_mean_std[,2:160])
